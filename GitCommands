@@ -1,0 +1,155 @@
+************************************************************************************************
+*****   checkout  *****
+************************************************************************************************
+git checkout sha --checkout a specific commit
+
+git checkout -b new_branch_name --creates new branch and switches to it
+
+//initialize repo
+git init
+
+//create and track local branch from remote
+git checkout --track origin/newsletter
+
+************************************************************************************************
+*****   fetch/pull  *****
+************************************************************************************************
+
+//fetch and prune
+git fetch -p
+
+git pull --prune origin branchname
+
+//unrelated history error
+git pull origin branchname --allow-unrelated-histories
+
+************************************************************************************************
+*****  diffs   *****
+************************************************************************************************
+
+//show file names only
+git diff --name-only angular9upgrade..master
+
+//to see if a commit is contained on a branch
+git branch -a --contains sha
+
+************************************************************************************************
+*****   add/commit/push  *****
+************************************************************************************************
+
+git add --all  -- add all files to staging
+git rm --cached filename -- removes file from staging
+
+//Git alias - adds all files and uses a commit message
+git acommit "your message here"
+
+//commit with message
+git commit -m "message"
+
+//commit with adding, message
+git commit -am "message"
+
+//commit with amend
+git commit --amend
+
+//create a remote branch from a local branch
+git push -u origin <branch>
+
+// delete branch remotely
+git push origin --delete remoteBranchName
+
+//stash
+git stash save "holdforasecond"
+
+************************************************************************************************
+*****   log/hitory  *****
+************************************************************************************************
+
+git log -p --pretty print list of hist
+git log --oneline --all 
+
+
+//view remote activity since your branch has been updated
+git log --oneline develop..origin/develop
+
+git show sha --shows what changed in a commit
+
+//super colors
+g//colors for log
+git log --pretty=format:"%Credred%Creset %Cgreengreen%Creset %C(Yellow)yellow%Creset %Cblueblue%Creset %C(magenta)magenta%Creset %C(cyan)cyan%Creset %C(white)white%Creset"
+
+************************************************************************************************
+*****   Branch *****
+************************************************************************************************
+//add origin remote
+git remote add origin githublocation
+
+//list remote stuff
+git remote -v
+
+git branch -a --shows all branchesg
+
+//rename a local branch
+git branch -m newname
+
+// delete branch locally
+git branch -d localBranchName
+
+//remove extra remote
+git remote remove originname
+
+
+//creates a new commit with the reverted changes
+git revert sha 
+
+//resets the branch with a hard reset
+git reset sha --hard 
+
+//reset local branch to origin(if you haven't pushed)
+git reset --hard origin/mybranch
+
+************************************************************************************************
+*****  Rebasing *****
+************************************************************************************************
+git checkout master
+git fetch --prune
+git checkout <feature>
+git rebase -i origin/master
+
+//after fixing conflicts add or remove files to staging
+git add/rm <conflicted_files>
+
+git rebase -i --continuegit
+
+//locally squasing all the commits
+git rebase -i HEAD~n
+
+//example
+pick dd661ba Commit 1
+squash 71f5fee Commit 2
+squash f4b4bf1 Commit 3
+
+************************************************************************************************
+*****   Alias Stuff  *****
+************************************************************************************************
+//my alias for history
+git hist
+alias: git config --global alias.hist "log --format='%C(yellow)%h %C(cyan)%ad %C(bold white)| %Creset%Cgreen%s%Cred%d %Creset%C(cyan)[%an]' --date=short"
+
+// the ! is a great way to ignore the git command when building this alias 
+git config --global alias.acommit "!git add -A && git commit -m" 
+
+//full reset of working dir (removes tracked and untracked files)
+git config --global alias.fullreset "!git reset --hard && git clean -fd"
+
+//Alias Stuff
+//remove alias
+git config --global --unset alias.<nameofalias>it log --format="%C(yellow)%h %C(cyan)%ad %C(bold white)| %Creset%Cgreen%s%Cred%d %Creset%C(cyan)[%an]" --date=short
+
+************************************************************************************************
+*****   reset/clean local changes  *****
+************************************************************************************************
+// removes all changes from tracked files
+git reset --hard
+//removes untracked files and directories
+git clean -fd
