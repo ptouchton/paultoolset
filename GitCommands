@@ -142,6 +142,9 @@ git config --global alias.acommit "!git add -A && git commit -m"
 //full reset of working dir (removes tracked and untracked files)
 git config --global alias.fullreset "!git reset --hard && git clean -fd"
 
+//shows what branches a commit is on
+git config --global alias.whatbranch "!git branch -a --contains"
+
 //Alias Stuff
 //remove alias
 git config --global --unset alias.<nameofalias>it log --format="%C(yellow)%h %C(cyan)%ad %C(bold white)| %Creset%Cgreen%s%Cred%d %Creset%C(cyan)[%an]" --date=short
