@@ -11,6 +11,13 @@ git init
 //create and track local branch from remote
 git checkout --track origin/newsletter
 
+//create new repo from existing project
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:alexpchin/<reponame>.git
+git push -u origin master
+
 ************************************************************************************************
 *****   fetch/pull  *****
 ************************************************************************************************
