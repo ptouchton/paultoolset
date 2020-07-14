@@ -1,0 +1,25 @@
+1. Add netlify function folder to root of project
+.netlify/functions
+
+2. Add build.toml file to root of project and include
+[build]
+    functions = ".netlify/functions"
+	
+3. yarn add netlify-lambda
+
+4. In the package.json file add two entries
+"fn:serve": "netlify-lambda serve functions",
+"fn:build": "netlify-lambda build functions"
+
+5. Create a functions folder in the root of the project
+
+6. To test the setup - create a hello.js file in functions folder and paste this in
+export async function handler(event, context) {
+    return {
+        statusCode: 200, // response status code
+        body: 'Hello, World', // response body
+    }
+}
+
+7.Run yarn fn:serve or npm run fn:serve to test the function locally. For making a build run yarn fn:build or npm run fn:build.
+8. type http://localhost:9000/hello in browser - should display
