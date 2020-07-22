@@ -1,0 +1,14 @@
+**** creating an comma delimited array for sql IN clause
+i.e. first
+     second
+	 third
+1. Find (in regular expression mode):(.+)  Replace with: '\1'
+result: 'first'
+        'second'
+		'third'
+		
+2. Find (in extended mode):\r\n Replace with (with a space after the comma, not shown): ,
+result: 'first',
+        'second',
+		'third'
+ 
