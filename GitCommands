@@ -79,6 +79,11 @@ git cherry-pick <commit-hash>
 //This way, you (and your co-workers) can still keep track of the origin of the commit and may avoid merge conflicts in the future.
 git cherry-pick -x <commit-hash>
 
+//reverting a single file from a commit
+git checkout FROM_BRANCH_NAME path/to/file
+i.e.
+git checkout master C:\workspace\platform\projects\ngrx.io\content\examples\ngrx-start\src\main.ts 
+
 ************************************************************************************************
 *****   log/hitory  *****
 ************************************************************************************************
@@ -121,7 +126,7 @@ git remote remove originname
 git revert sha 
 
 //resets the branch with a hard reset
-git reset sha --hard 
+git reset <sha> --hard 
 
 //reset local branch to origin(if you haven't pushed)
 git reset --hard origin/mybranch
@@ -174,3 +179,27 @@ git config --global --unset alias.<nameofalias>it log --format="%C(yellow)%h %C(
 git reset --hard
 //removes untracked files and directories
 git clean -fd
+
+************************************************************************************************
+*****   upstream stuff for opensource forks  *****
+************************************************************************************************
+
+# Add the remote, call it "upstream":
+
+git remote add upstream https://github.com/whoever/whatever.git
+
+# Make sure that you're on your master branch:
+
+git checkout master
+
+# Fetch all the branches of that remote into remote-tracking branches,
+# such as upstream/master:
+
+git fetch upstream
+
+
+# Rewrite your master branch so that any commits of yours that
+# aren't already in upstream/master are replayed on top of that
+# other branch:
+
+git rebase upstream/master
