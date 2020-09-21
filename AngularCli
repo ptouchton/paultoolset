@@ -16,3 +16,15 @@ ng new --packageManager=npm|yarn|pnpm|cnpm <appname>
 ************************************************************************************************
 
 ng add @angular/material
+
+************************************************************************************************
+*****   generate  *****
+************************************************************************************************
+
+ng add @angular/material
+
+//generate module with child routing
+ng g module features/my-recipes --routing=true --routingScope=Child
+
+//gen component in feature module
+ng g c features/my-recipes --module=my-recipes
