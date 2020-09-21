@@ -15,7 +15,7 @@ git checkout --track origin/newsletter
 git init
 git add README.md
 git commit -m "first commit"
-git remote add origin git@github.com:alexpchin/<reponame>.git
+git remote add origin git@github.com:ptouchton/<reponame>.git
 git push -u origin master
 
 ************************************************************************************************
@@ -96,6 +96,9 @@ git log --oneline --all
 git log --oneline develop..origin/develop
 
 git show sha --shows what changed in a commit
+
+//show file names only in a commit
+git show d290df923 --name-only
 
 //super colors
 g//colors for log
