@@ -175,7 +175,10 @@ git config --global alias.whatbranch "!git branch -a --contains"
 git config --global alias.delete-useless-branches "!git branch | grep -v "master" | grep -v ^* | xargs git branch -d;"
 
 //Delete all local branches but master and the current one.
-git config --global alias.delete-useless-branches "!git branch | grep -v "master" | grep -v ^* | xargs git branch -D;"
+git config --global alias.delete-useless-branches-force "!git branch | grep -v "master" | grep -v ^* | xargs git branch -D;"
+
+//creates an alias to view all aliases
+git config --global alias.aliases "!git config --get-regexp alias"
 
 //Alias Stuff
 //remove alias
