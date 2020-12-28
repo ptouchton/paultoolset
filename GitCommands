@@ -22,6 +22,9 @@ git push -u origin master
 *****   fetch/pull  *****
 ************************************************************************************************
 
+//display info about remote
+git remote show origin
+
 //fetch and prune
 git fetch -p
 
