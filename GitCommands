@@ -47,6 +47,9 @@ git branch -a --contains sha
 *****   add/commit/push  *****
 ************************************************************************************************
 
+//add with preview
+git add -p
+
 git add --all  -- add all files to staging
 git rm --cached filename -- removes file from staging
 
