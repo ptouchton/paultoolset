@@ -68,6 +68,10 @@ git commit -am "message"
 //commit with amend
 git commit --amend
 
+//updates the commit message only - the hash will change
+//do not do this if you have pushed before
+git commit --amend -m "whatever"
+
 //create a remote branch from a local branch
 git push -u origin <branch>
 
@@ -109,6 +113,9 @@ git show d290df923 --name-only
 //super colors
 g//colors for log
 git log --pretty=format:"%Credred%Creset %Cgreengreen%Creset %C(Yellow)yellow%Creset %Cblueblue%Creset %C(magenta)magenta%Creset %C(cyan)cyan%Creset %C(white)white%Creset"
+
+//shows the file names that changed in a commit
+git hist --stat
 
 ************************************************************************************************
 *****   Branch *****
@@ -196,8 +203,13 @@ git config --global --unset alias.<nameofalias>
 ************************************************************************************************
 // removes all changes from tracked files
 git reset --hard
+
 //removes untracked files and directories
 git clean -fd
+
+// soft will reset to commit and stage all changes
+// from the commits being abandoned
+git reset --soft sha
 
 ************************************************************************************************
 *****   upstream stuff for opensource forks  *****
