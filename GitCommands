@@ -15,7 +15,13 @@ git checkout --track origin/newsletter
 git init
 git add README.md
 git commit -m "first commit"
+
+--create repo on github
+git remote add origin https://github.com/ptouchton/<reponame>.git
+
+--other
 git remote add origin git@github.com:ptouchton/<reponame>.git
+
 git push -u origin master
 
 ************************************************************************************************
