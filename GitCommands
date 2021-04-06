@@ -203,6 +203,8 @@ git config --global alias.aliases "!git config --get-regexp alias"
 //remove alias
 git config --global --unset alias.<nameofalias>
 
+//Sublime as editor
+git config --global core.editor "'c:/Program Files/sublime text 3/subl.exe' -w"
 
 ************************************************************************************************
 *****   reset/clean local changes  *****
