@@ -174,6 +174,24 @@ pick dd661ba Commit 1
 squash 71f5fee Commit 2
 squash f4b4bf1 Commit 3
 
+//changing a commit to a different parent
+
+Current Tree
+
+         master
+        /
+       A
+      /
+     B
+Should Be
+
+     master
+     /   \
+    A     B
+
+git checkout B
+git rebase A --onto master
+
 ************************************************************************************************
 *****   Alias Stuff  *****
 ************************************************************************************************
@@ -191,10 +209,10 @@ git config --global alias.fullreset "!git reset --hard && git clean -fd"
 git config --global alias.whatbranch "!git branch -a --contains"
 
 //Delete all local branches but master and the current one, only if they are fully merged with master.
-git config --global alias.delete-useless-branches "!git branch | grep -v "master" | grep -v ^* | xargs git branch -d;"
+git config --global alias.delete-useless-branches "!git branch | grep -v "master" | grep -v "main" | grep -v ^* | xargs git branch -d;"
 
 //Delete all local branches but master and the current one.
-git config --global alias.delete-useless-branches-force "!git branch | grep -v "master" | grep -v ^* | xargs git branch -D;"
+git config --global alias.delete-useless-branches-force "!git branch | grep -v "master" | grep -v "main" | grep -v ^* | xargs git branch -D;"
 
 //creates an alias to view all aliases
 git config --global alias.aliases "!git config --get-regexp alias"
