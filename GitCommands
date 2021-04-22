@@ -153,6 +153,9 @@ git reset <sha> --hard
 //reset local branch to origin(if you haven't pushed)
 git reset --hard origin/mybranch
 
+//create local branch from existing remote
+git checkout -b new_branch_name origin/existing_branch_name_on_git_hub
+
 ************************************************************************************************
 *****  Rebasing *****
 ************************************************************************************************
@@ -199,7 +202,7 @@ git rebase A --onto master
 git hist
 alias: git config --global alias.hist "log --format='%C(yellow)%h %C(cyan)%ad %C(bold white)| %Creset%Cgreen%s%Cred%d %Creset%C(cyan)[%an]' --date=short"
 
-// the ! is a great way to ignore the git command when building this alias 
+// the ! is a great way to ignore the git command when building this alias //
 git config --global alias.acommit "!git add -A && git commit -m" 
 
 //full reset of working dir (removes tracked and untracked files)
@@ -222,7 +225,15 @@ git config --global alias.aliases "!git config --get-regexp alias"
 git config --global --unset alias.<nameofalias>
 
 //Sublime as editor
+//windows
 git config --global core.editor "'c:/Program Files/sublime text 3/subl.exe' -w"
+
+//mac
+git config --global core.editor "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -w"
+
+//list config items
+git config --list
+
 
 ************************************************************************************************
 *****   reset/clean local changes  *****
