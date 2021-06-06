@@ -234,6 +234,9 @@ git config --global core.editor "'/Applications/Sublime Text.app/Contents/Shared
 //list config items
 git config --list
 
+//edit config
+git config --global --edit
+
 
 ************************************************************************************************
 *****   reset/clean local changes  *****

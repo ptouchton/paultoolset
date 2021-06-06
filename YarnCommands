@@ -21,6 +21,9 @@ yarn upgrade-interactive
 ************************************************************************************************
 yarn list --pattern "angular"
 
+// finds dependencies to package
+yarn why <package-name>
+
 
 ************************************************************************************************
 **** npm cheatsheet
