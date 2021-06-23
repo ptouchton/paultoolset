@@ -123,6 +123,10 @@ git log --pretty=format:"%Credred%Creset %Cgreengreen%Creset %C(Yellow)yellow%Cr
 //shows the file names that changed in a commit
 git hist --stat
 
+// To search the commit log (across all branches) for the given text:
+
+git log --all --grep='Build 0051'
+
 ************************************************************************************************
 *****   Branch *****
 ************************************************************************************************
